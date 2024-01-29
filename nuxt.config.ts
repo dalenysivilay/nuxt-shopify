@@ -1,4 +1,14 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import apollo from './configs/apollo.config'
+
 export default defineNuxtConfig({
-  devtools: { enabled: true }
+  apollo,
+  modules: [
+    '@vueuse/nuxt',
+    '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt',
+    '@nuxtjs/apollo',
+    '@nuxtjs/tailwindcss',
+    'nuxt-icon',
+  ],
+  devtools: { enabled: true },
 })

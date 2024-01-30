@@ -1,5 +1,5 @@
-import processEnv from '../../utils/processEnv'
-import type { ApolloClient } from '~/types/apollo.types'
+import { processEnv } from '../../utils/processEnv'
+import type { ApolloClient } from '~/types/apollo'
 
 export default function shopifyClient(): ApolloClient {
   const baseUrl = processEnv('SHOPIFY_BASE_URL')

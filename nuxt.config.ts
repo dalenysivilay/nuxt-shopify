@@ -1,7 +1,6 @@
-import apollo from './src/configs/apollo.config'
+import apollo from './configs/apollo.config'
 
 export default defineNuxtConfig({
-  srcDir: './src',
   apollo,
   modules: [
     '@vueuse/nuxt',

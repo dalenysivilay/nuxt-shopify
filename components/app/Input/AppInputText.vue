@@ -4,7 +4,7 @@ const modelValue = ref<string>('')
 
 <template>
   <div>
-    <BaseInput
+    <BaseInputField
       id="text"
       label="Text"
       type="text"

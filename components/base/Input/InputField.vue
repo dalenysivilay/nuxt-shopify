@@ -1,5 +1,5 @@
 <script setup lang="ts">
-interface BaseInputWrapperProps {
+interface InputFieldProps {
   id: string
   type: string
   placeholder: string
@@ -9,7 +9,7 @@ interface BaseInputWrapperProps {
   modelValue: string
 }
 
-const props = defineProps<BaseInputWrapperProps>()
+const props = defineProps<InputFieldProps>()
 
 const emit = defineEmits(['update:modelValue', 'blur'])
 

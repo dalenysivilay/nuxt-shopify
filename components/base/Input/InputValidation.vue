@@ -1,9 +1,9 @@
 <script setup lang="ts">
-interface BaseInputValidationProps {
+interface InputValidationProps {
   validationMessage?: ValidationMessage
 }
 
-const props = defineProps<BaseInputValidationProps>()
+const props = defineProps<InputValidationProps>()
 
 const displayedMessage = computed(() => props.validationMessage?.message || '')
 </script>

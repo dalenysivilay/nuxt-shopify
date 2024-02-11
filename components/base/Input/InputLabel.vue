@@ -1,10 +1,10 @@
 <script setup lang="ts">
-interface BaseInputLabelProps {
+interface InputLabelProps {
   label: string | undefined
   fieldId?: string
 }
 
-const props = defineProps<BaseInputLabelProps>()
+const props = defineProps<InputLabelProps>()
 const hasLabel = computed(() => !!props.label)
 </script>
 

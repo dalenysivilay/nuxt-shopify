@@ -1,5 +1,5 @@
 <script setup lang="ts">
-interface BaseInputFieldProps {
+interface InputFieldProps {
   label?: string
   type: string
   id?: string
@@ -10,7 +10,7 @@ interface BaseInputFieldProps {
   isDisabled?: boolean
 }
 
-withDefaults(defineProps<BaseInputFieldProps>(), {
+withDefaults(defineProps<InputFieldProps>(), {
   type: 'text',
   id: 'text',
   placeholder: 'Type something...',
@@ -26,8 +26,8 @@ function updateModelValue(value: string) {
 
 <template>
   <div>
-    <BaseInputLabel :label="label" />
-    <BaseInputWrapper
+    <InputLabel :label="label" />
+    <InputField
       :id="id"
       :type="type"
       :placeholder="placeholder"
@@ -38,6 +38,6 @@ function updateModelValue(value: string) {
       @update:model-value="updateModelValue"
       @blur="$emit('blur')"
     />
-    <BaseInputValidation :validation-message="validationMessage" />
+    <InputValidation :validation-message="validationMessage" />
   </div>
 </template>

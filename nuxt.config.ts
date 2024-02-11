@@ -10,6 +10,11 @@ export default defineNuxtConfig({
       {
         path: '~/components/global',
         pathPrefix: true,
+        prefix: 'Global',
+      },
+      {
+        path: '~/components/common',
+        pathPrefix: false,
       },
     ],
   },

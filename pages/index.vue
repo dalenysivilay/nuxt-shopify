@@ -9,5 +9,6 @@
     <GlobalInputField type="phone" />
     <GlobalButton />
     <GlobalButton :is-loading="true" />
+    <GlobalAccordion label="Hello World" content="Content goes here" />
   </div>
 </template>

@@ -8,6 +8,7 @@
     <GlobalInputField type="email" />
     <GlobalInputField type="phone" />
     <GlobalButton />
+    <GlobalDivider />
     <GlobalButton :is-loading="true" />
     <GlobalAccordion label="Hello World" content="Content goes here" />
   </div>

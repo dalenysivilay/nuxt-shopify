@@ -7,5 +7,7 @@
     <GlobalInputField type="text" />
     <GlobalInputField type="email" />
     <GlobalInputField type="phone" />
+    <GlobalButton />
+    <GlobalButton :is-loading="true" />
   </div>
 </template>

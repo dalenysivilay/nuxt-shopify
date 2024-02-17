@@ -1,15 +1,18 @@
 <template>
-  <div
-    class="
-      hidden items-center justify-between
+  <div class="px-4 py-2">
+    <NavDesktop
+      class="
+        hidden
 
-      md:flex
-    "
-  >
-    <NavLogo />
-    <NavLinks />
-  </div>
-  <div class="md:hidden">
-    <NavMobile />
+        md:flex
+      "
+    />
+    <NavMobile
+      class="
+        flex
+
+        md:hidden
+      "
+    />
   </div>
 </template>

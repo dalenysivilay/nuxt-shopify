@@ -1,5 +1,5 @@
 <template>
   <header>
-    <BaseNav />
+    <Navigation />
   </header>
 </template>

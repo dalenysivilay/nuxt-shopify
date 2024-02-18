@@ -1,7 +1,7 @@
 <script setup lang="ts">
 type Side = 'left' | 'right'
 
-interface TemplateSlider {
+interface TemplateSliderProps {
   isOpen: boolean
   toggleSlider: () => void
   side: Side
@@ -10,7 +10,7 @@ interface TemplateSlider {
   footerComponent?: Component | undefined
 }
 
-withDefaults(defineProps<TemplateSlider>(), {
+withDefaults(defineProps<TemplateSliderProps>(), {
   isOpen: false,
   toggleSlider: () => {},
   side: 'left',

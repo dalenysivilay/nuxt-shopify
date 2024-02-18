@@ -1,32 +1,42 @@
 <script setup lang="ts">
-import EmailInputField from '../EmailInputField.vue'
-import PhoneInputField from '../PhoneInputField.vue'
-import TextInputField from '../TextInputField.vue'
-
-type InputType = 'text' | 'email' | 'phone'
-
 interface TemplateInputFieldProps {
-  type: InputType
+  label?: string
+  type: string
+  id?: string
+  modelValue: string
+  placeholder?: string
+  iconName?: string
+  validationMessage?: ValidationMessage
+  isDisabled?: boolean
 }
 
-const props = defineProps<TemplateInputFieldProps>()
-
-const inputComponent = computed(() => {
-  switch (props.type) {
-    case 'text':
-      return TextInputField
-    case 'email':
-      return EmailInputField
-    case 'phone':
-      return PhoneInputField
-    default:
-      return console.error('Invalid input type or not implemented yet.')
-  }
+withDefaults(defineProps<TemplateInputFieldProps>(), {
+  type: 'text',
+  id: 'text',
+  placeholder: 'Type something...',
+  isDisabled: false,
 })
+
+const emit = defineEmits(['update:modelValue', 'blur'])
+
+function updateModelValue(value: string) {
+  emit('update:modelValue', value)
+}
 </script>
 
 <template>
   <div>
-    <component :is="inputComponent" />
+    <BaseInputField
+      :id="id"
+      :label="label"
+      :type="type"
+      :placeholder="placeholder"
+      :icon-name="iconName"
+      :model-value="modelValue"
+      :validation-message="validationMessage"
+      :is-disabled="isDisabled"
+      @update:model-value="updateModelValue"
+      @blur="$emit('blur')"
+    />
   </div>
 </template>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 interface BaseInputFieldProps {
   label?: string
-  type: string
+  type?: string
   id?: string
   modelValue: string
   placeholder?: string

@@ -1,16 +1,16 @@
 export const useNavigationStore = defineStore('navigation', {
   state: () => ({
-    navSliderOpen: false,
-    cartSliderOpen: false,
+    isNavSliderOpen: false,
+    isCartSliderOpen: false,
   }),
   actions: {
-    toggleSlider() {
-      this.navSliderOpen = !this.navSliderOpen
-      this.cartSliderOpen = !this.cartSliderOpen
+    toggleNavSlider() {
+      this.isNavSliderOpen = !this.isNavSliderOpen
+      console.log('toggleNavSlider', this.isNavSliderOpen)
     },
-    closeSlider() {
-      this.navSliderOpen = false
-      this.cartSliderOpen = false
+    toggleCartSlider() {
+      this.isCartSliderOpen = !this.isCartSliderOpen
+      console.log('toggleCartSlider', this.isCartSliderOpen)
     },
   },
 })

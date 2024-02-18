@@ -1,13 +1,10 @@
 <script setup lang="ts">
-const navigationStore = useNavigationStore()
-const cartSliderOpen = computed(() => navigationStore.cartSliderOpen)
 </script>
 
 <template>
+  <NavSlider />
+  <CartSlider />
   <Header />
-  <div>
-    <BaseSlider :is-open="cartSliderOpen" side="left" />
-  </div>
   <div
     class="
       px-4

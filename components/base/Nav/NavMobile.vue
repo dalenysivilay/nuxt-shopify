@@ -1,7 +1,6 @@
 <script setup lang="ts">
 const navigationStore = useNavigationStore()
-const navSliderOpen = computed(() => navigationStore.navSliderOpen)
-const toggleSlider = () => navigationStore.toggleSlider()
+const toggleSlider = () => navigationStore.toggleNavSlider()
 </script>
 
 <template>
@@ -11,7 +10,7 @@ const toggleSlider = () => navigationStore.toggleSlider()
       "
   >
     <button @click="toggleSlider">
-      <Icon :name="navSliderOpen ? 'ic:round-close' : 'ic:round-menu'" class="size-6" />
+      <Icon name="ic:round-menu" class="size-6" />
     </button>
     <NavLogo />
     <NavUtilityLinks />

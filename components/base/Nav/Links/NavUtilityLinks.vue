@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const navigationStore = useNavigationStore()
-const toggleCartSlider = () => navigationStore.toggleSlider()
+const toggleCartSlider = () => navigationStore.toggleCartSlider()
 </script>
 
 <template>

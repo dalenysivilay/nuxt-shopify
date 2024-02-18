@@ -16,7 +16,7 @@ defineProps<SliderHeaderProps>()
           <Icon name="ic:round-close" class="size-6" />
         </button>
       </div>
-      <GlobalDivider v-if="sliderHeader" />
+      <Divider v-if="sliderHeader" />
     </div>
   </div>
 </template>

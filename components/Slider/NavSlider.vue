@@ -1,13 +1,12 @@
 <script setup lang="ts">
 const navigationStore = useNavigationStore()
-const isOpen = computed(() => navigationStore.isNavSliderOpen)
+const isNavSliderOpen = computed(() => navigationStore.isNavSliderOpen)
 const toggleSlider = () => navigationStore.toggleNavSlider()
 </script>
 
 <template>
-  <GlobalSlider
-    :is-open="isOpen"
+  <TemplateSlider
+    :is-open="isNavSliderOpen"
     :toggle-slider="toggleSlider"
-    side="left"
   />
 </template>

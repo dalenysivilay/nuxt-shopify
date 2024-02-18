@@ -1,13 +1,15 @@
 <script setup lang="ts">
-import EmailInputField from './Inputs/EmailInputField.vue'
-import PhoneInputField from './Inputs/PhoneInputField.vue'
-import TextInputField from './Inputs/TextInputField.vue'
+import EmailInputField from '../EmailInputField.vue'
+import PhoneInputField from '../PhoneInputField.vue'
+import TextInputField from '../TextInputField.vue'
 
 type InputType = 'text' | 'email' | 'phone'
 
-const props = defineProps<{
+interface TemplateInputFieldProps {
   type: InputType
-}>()
+}
+
+const props = defineProps<TemplateInputFieldProps>()
 
 const inputComponent = computed(() => {
   switch (props.type) {

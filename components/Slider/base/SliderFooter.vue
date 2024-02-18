@@ -9,7 +9,7 @@ defineProps<SliderFooterProps>()
 <template>
   <div>
     <div class="space-y-2">
-      <GlobalDivider v-if="sliderFooter" />
+      <Divider v-if="sliderFooter" />
       <component :is="sliderFooter" />
     </div>
   </div>

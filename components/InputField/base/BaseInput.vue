@@ -1,5 +1,5 @@
 <script setup lang="ts">
-interface InputFieldProps {
+interface BaseInputFieldProps {
   label?: string
   type: string
   id?: string
@@ -10,7 +10,7 @@ interface InputFieldProps {
   isDisabled?: boolean
 }
 
-withDefaults(defineProps<InputFieldProps>(), {
+withDefaults(defineProps<BaseInputFieldProps>(), {
   type: 'text',
   id: 'text',
   placeholder: 'Type something...',

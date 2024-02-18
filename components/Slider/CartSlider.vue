@@ -7,7 +7,7 @@ const toggleCartSlider = () => navigationStore.toggleCartSlider()
 </script>
 
 <template>
-  <GlobalSlider
+  <TemplateSlider
     :is-open="isCartSliderOpen"
     :toggle-slider="toggleCartSlider"
     side="right"

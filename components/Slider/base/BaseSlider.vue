@@ -10,11 +10,7 @@ interface BaseSliderProps {
   footerComponent?: Component | undefined
 }
 
-const props = defineProps<BaseSliderProps>()
-
-const slideDirection = computed(() => {
-  return props.side === 'left' ? 'translate-x-0' : 'translate-x-full'
-})
+defineProps<BaseSliderProps>()
 </script>
 
 <template>
@@ -26,9 +22,8 @@ const slideDirection = computed(() => {
     :class="{
       'left-0': side === 'left',
       'right-0': side === 'right',
-      [slideDirection]: !isOpen,
-      '-translate-x-full': side === 'left' && isOpen,
-      'translate-x-0': side === 'right' && isOpen,
+      'translate-x-full': !isOpen && side === 'right',
+      '-translate-x-full': !isOpen && side === 'left',
     }"
   >
     <div class="flex h-full flex-col justify-between px-4 py-2">

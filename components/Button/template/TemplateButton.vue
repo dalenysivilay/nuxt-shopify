@@ -1,7 +1,7 @@
 <script setup lang="ts">
 type ButtonType = 'button' | 'submit' | 'reset'
 
-interface GlobalButtonProps {
+interface TemplateButtonProps {
   buttonType?: ButtonType
   buttonLabel?: string
   iconName?: string
@@ -12,7 +12,7 @@ interface GlobalButtonProps {
   route?: string
 }
 
-withDefaults(defineProps<GlobalButtonProps>(), {
+withDefaults(defineProps<TemplateButtonProps>(), {
   buttonType: 'button',
   buttonLabel: 'Click Here',
   isLoading: false,

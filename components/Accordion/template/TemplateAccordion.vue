@@ -1,10 +1,10 @@
 <script setup lang="ts">
-interface GlobalAccordionProps {
+interface TemplateAccordionProps {
   label: string
   content: string
 }
 
-withDefaults(defineProps<GlobalAccordionProps>(), {
+withDefaults(defineProps<TemplateAccordionProps>(), {
   label: 'Accordion Label',
   content: 'Accordion Content',
 })

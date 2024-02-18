@@ -13,7 +13,7 @@ function handleBlur() {
 
 <template>
   <div>
-    <BaseInput
+    <TemplateInputField
       id="email"
       v-model="email"
       label="Email"

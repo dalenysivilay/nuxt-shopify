@@ -8,5 +8,6 @@ const toggleSlider = () => navigationStore.toggleNavSlider()
   <TemplateSlider
     :is-open="isNavSliderOpen"
     :toggle-slider="toggleSlider"
+    side="left"
   />
 </template>

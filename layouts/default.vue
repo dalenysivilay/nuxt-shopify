@@ -2,16 +2,19 @@
 </script>
 
 <template>
-  <NavSlider />
-  <CartSlider />
-  <Header />
-  <div
-    class="
-      px-4
+  <div class="flex min-h-screen flex-col">
+    <NavSlider />
+    <CartSlider />
+    <Header />
+    <div
+      class="
+        grow px-4
 
-      md:px-24
-    "
-  >
-    <slot />
+        md:px-24
+      "
+    >
+      <slot />
+    </div>
+    <Footer />
   </div>
 </template>

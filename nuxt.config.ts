@@ -2,6 +2,7 @@ import type { NuxtPage } from 'nuxt/schema'
 import apollo from './configs/apollo.config'
 
 export default defineNuxtConfig({
+  apollo,
   components: {
     dirs: [
       {
@@ -14,7 +15,6 @@ export default defineNuxtConfig({
       },
     ],
   },
-  apollo,
   hooks: {
     'pages:extend': function (pages) {
       const pagesToRemove: NuxtPage[] = []

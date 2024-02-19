@@ -12,6 +12,7 @@ export default defineNuxtConfig({
       {
         path: '~/pages',
         pattern: '*/components/**',
+        pathPrefix: false,
       },
     ],
   },

@@ -4,10 +4,10 @@ const toggleCartSlider = () => navigationStore.toggleCartSlider()
 </script>
 
 <template>
-  <div class="flex space-x-3">
+  <div class="flex space-x-4">
     <NuxtLink to="/account">
       <Icon
-        name="ic:round-account-circle" class="
+        name="ic:outline-account-circle" class="
           size-6 text-black
 
           hover:text-brandPrimary

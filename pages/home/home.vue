@@ -6,7 +6,6 @@ definePageMeta({
 
 <template>
   <div>
-    <h1>Home</h1>
     <TextInputField type="text" />
     <EmailInputField type="email" />
     <PhoneInputField type="phone" />

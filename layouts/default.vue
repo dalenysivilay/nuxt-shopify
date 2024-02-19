@@ -5,14 +5,17 @@
   <div class="flex min-h-screen flex-col">
     <NavSlider />
     <CartSlider />
-    <Header />
+
     <div
       class="
         grow px-4
 
-        md:px-24
+        md:px-8
+
+        lg:px-24
       "
     >
+      <Header />
       <slot />
     </div>
     <Footer />

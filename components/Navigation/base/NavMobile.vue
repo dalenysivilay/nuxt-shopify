@@ -6,13 +6,13 @@ const toggleSlider = () => navigationStore.toggleNavSlider()
 <template>
   <div
     class="
-        flex w-full flex-row items-center justify-between
+        flex w-full flex-row items-center justify-between py-4
       "
   >
     <button @click="toggleSlider">
       <Icon name="ic:round-menu" class="size-6" />
     </button>
     <NavLogo />
-    <NavUtilityLinks />
+    <NavUtilities />
   </div>
 </template>

@@ -5,39 +5,22 @@ import { navLinks } from '~/utils/constants'
 <template>
   <div
     class="
-      flex flex-col
+      flex flex-col items-center
 
-      md:flex-row md:items-center md:space-x-4
+      md:flex-row md:space-x-4
     "
   >
-    <div
+    <NuxtLink
+      v-for="link in navLinks"
+      :key="link.label"
+      :to="link.path"
       class="
-        flex flex-col items-center
+        text-base font-medium text-black
 
-        md:flex-row md:space-x-3
+        hover:text-brandPrimary hover:underline
       "
     >
-      <NuxtLink
-        v-for="link in navLinks"
-        :key="link.label"
-        :to="link.path"
-        class="
-          text-base font-medium text-black
-
-          hover:text-brandPrimary hover:underline
-        "
-      >
-        {{ link.label }}
-      </NuxtLink>
-    </div>
-    <div
-      class="
-        hidden
-
-        md:flex
-      "
-    >
-      <NavUtilityLinks />
-    </div>
+      {{ link.label }}
+    </NuxtLink>
   </div>
 </template>

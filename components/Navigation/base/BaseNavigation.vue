@@ -1,17 +1,17 @@
 <template>
-  <div class="px-4 py-2">
+  <div>
     <NavDesktop
       class="
         hidden
 
-        md:flex
+        lg:flex
       "
     />
     <NavMobile
       class="
         flex
 
-        md:hidden
+        lg:hidden
       "
     />
   </div>

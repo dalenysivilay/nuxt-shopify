@@ -11,5 +11,6 @@
     <Divider />
     <TemplateButton :is-loading="true" />
     <TemplateAccordion label="Hello World" content="Content goes here" />
+    <SearchInputField />
   </div>
 </template>

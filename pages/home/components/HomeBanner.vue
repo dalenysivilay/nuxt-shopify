@@ -23,7 +23,7 @@ withDefaults(
   <div>
     <div
       class="
-        mt-4 h-3/6 bg-cover bg-center
+        h-3/6 bg-cover bg-center
 
         md:rounded
       "

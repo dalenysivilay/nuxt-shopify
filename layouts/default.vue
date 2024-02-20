@@ -5,7 +5,6 @@
   <div class="flex min-h-screen flex-col">
     <NavSlider />
     <CartSlider />
-
     <div
       class="
         grow px-4
@@ -16,7 +15,17 @@
       "
     >
       <Header />
-      <slot />
+      <div
+        class="
+          py-4
+
+          md:py-6
+
+          lg:py-8
+        "
+      >
+        <slot />
+      </div>
     </div>
     <Footer />
   </div>

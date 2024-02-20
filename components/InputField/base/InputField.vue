@@ -26,7 +26,7 @@ function updateValue(event: Event) {
 </script>
 
 <template>
-  <div class="mt-2 rounded-md shadow-sm" :class="{ relative: iconName }">
+  <div class="rounded-md shadow-sm" :class="{ relative: iconName }">
     <div v-if="iconName" class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
       <Icon :name="displayedIconName" class="size-5" :class="{ 'text-red-600': hasError, 'text-gray-400': !hasError }" />
     </div>

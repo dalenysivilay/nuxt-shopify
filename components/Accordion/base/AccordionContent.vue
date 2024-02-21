@@ -11,7 +11,7 @@ defineProps<AccordionContentProps>()
   <div
     :class="{ hidden: !isAccordionOpen }"
     class="
-      px-4 pb-2 pt-4 text-base font-normal text-gray-900 transition-all
+      px-4 pb-2 pt-4 text-base font-normal text-brandTextDark transition-all
       duration-300 ease-in-out
     "
   >

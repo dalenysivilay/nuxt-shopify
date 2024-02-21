@@ -8,7 +8,7 @@ const toggleCartSlider = () => navigationStore.toggleCartSlider()
     <NuxtLink to="/account">
       <Icon
         name="ic:outline-account-circle" class="
-          size-6 text-black
+          size-6 text-brandTextDark
 
           hover:text-brandPrimary
         "
@@ -17,7 +17,7 @@ const toggleCartSlider = () => navigationStore.toggleCartSlider()
     <button @click="toggleCartSlider">
       <Icon
         name="ic:outline-shopping-cart" class="
-          size-6 text-black
+          size-6 text-brandTextDark
 
           hover:text-brandPrimary
         "

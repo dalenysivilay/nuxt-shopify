@@ -6,9 +6,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        brandPrimary: '#0a0a0a',
-        brandPrimaryDark: '#000000',
+        brandPrimary: '#27272a',
+        brandPrimaryDark: '#09090b',
         brandPrimaryLight: '#333333',
+        brandTextDark: '#171717',
+        brandTextLight: '#FFFFFF',
         // brandPrimary: '#1a9964',
         // brandPrimaryDark: '#0d6f4b',
         // brandPrimaryLight: '#77deac',

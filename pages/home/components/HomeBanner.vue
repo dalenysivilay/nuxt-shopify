@@ -64,10 +64,10 @@ withDefaults(
               md:flex-row md:space-x-4 md:space-y-0
             "
           >
-            <ShopNowButton
+            <ViewProductButton
               route="/collections/ag-products"
             />
-            <ShopNowButton
+            <ViewProductButton
               route="/collections/turf-products"
             />
           </div>

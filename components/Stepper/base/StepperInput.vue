@@ -23,7 +23,7 @@ function emitUpdate() {
     v-model.number="innerValue"
     class="
       w-auto justify-center rounded border border-solid border-gray-300 p-2
-      text-center text-base font-medium text-black
+      text-center text-base font-medium text-brandTextDark
 
       focus:outline-none
     "

@@ -17,7 +17,7 @@ function toggleAccordion() {
     :aria-expanded="modelValue ? 'true' : 'false'"
     class="
       flex w-full items-center justify-start px-4 py-2 text-left text-base
-      font-medium text-gray-900
+      font-medium text-brandTextDark
 
       focus:outline-none
     "
@@ -25,13 +25,13 @@ function toggleAccordion() {
   >
     <Icon
       :class="{ 'rotate-90': modelValue }"
-      class="text-gray-900 transition-transform duration-200 ease-in-out"
+      class="text-brandTextDark transition-transform duration-200 ease-in-out"
       name="ic:outline-keyboard-arrow-right"
       size="2rem"
     />
     <span
       class="
-        ml-4 font-semibold text-gray-900
+        ml-4 font-semibold text-brandTextDark
 
         md:text-base
       "

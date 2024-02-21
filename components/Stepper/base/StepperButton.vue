@@ -9,7 +9,7 @@ defineProps({
   <button
     class="
       rounded border border-solid border-gray-300 px-4 py-2 font-serif font-bold
-      text-black
+      text-brandTextDark
 
       focus:outline-none
     "

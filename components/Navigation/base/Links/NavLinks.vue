@@ -15,7 +15,7 @@ import { navLinks } from '~/utils/constants'
       :key="link.label"
       :to="link.path"
       class="
-        text-base font-medium text-black
+        text-base font-medium text-brandTextDark
 
         hover:text-brandPrimary hover:underline
       "

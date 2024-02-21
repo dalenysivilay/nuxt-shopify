@@ -1,3 +1,3 @@
-export function logError(error: Error) {
-  console.error(error)
+export function logError(error: Error, message: string): void {
+  console.error(message, error)
 }

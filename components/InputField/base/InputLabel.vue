@@ -10,6 +10,6 @@ const hasLabel = computed(() => !!props.label)
 
 <template>
   <div v-if="hasLabel">
-    <label :for="fieldId" class="mb-2 block text-sm font-medium leading-6 text-gray-900">{{ label }}</label>
+    <label :for="fieldId" class="mb-2 block text-sm font-medium leading-6 text-brandTextDark">{{ label }}</label>
   </div>
 </template>

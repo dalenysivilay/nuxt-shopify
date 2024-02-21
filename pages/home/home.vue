@@ -7,5 +7,6 @@ definePageMeta({
 <template>
   <div>
     <HomeBanner />
+    <ProductCard />
   </div>
 </template>

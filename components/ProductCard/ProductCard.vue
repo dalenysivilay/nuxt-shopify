@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import productCardQuery from './gql/productCardQuery'
+import productCardQuery from '~/graphql/queries/productCardQuery'
 import type { ProductCard } from '~/types/components/ProductCard.types'
 
 interface QueryResult {

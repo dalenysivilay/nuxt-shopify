@@ -1,14 +1,14 @@
 <script setup lang="ts">
-interface HomeBannerProps {
-  title: string
-  subtitle: string
-  backgroundImageUrl: string
-  productImageUrl: string
-  productImageAlt: string
+interface HeroBannerProps {
+  title?: string
+  subtitle?: string
+  backgroundImageUrl?: string
+  productImageUrl?: string
+  productImageAlt?: string
 }
 
 withDefaults(
-  defineProps<HomeBannerProps>(),
+  defineProps<HeroBannerProps>(),
   {
     title: 'Default Title',
     subtitle: 'Default Subtitle',
@@ -39,24 +39,8 @@ withDefaults(
         "
       >
         <div class="flex flex-1 flex-col justify-center">
-          <h1
-            class="
-              mb-6 text-4xl font-semibold text-white
-
-              md:text-5xl
-            "
-          >
-            {{ title }}
-          </h1>
-          <p
-            class="
-              mb-8 text-lg font-medium text-white
-
-              md:text-2xl
-            "
-          >
-            {{ subtitle }}
-          </p>
+          <HeroBannerTitle :title="title" />
+          <HeroBannerSubtitle :subtitle="subtitle" />
           <div
             class="
               flex flex-col space-y-4
@@ -64,12 +48,8 @@ withDefaults(
               md:flex-row md:space-x-4 md:space-y-0
             "
           >
-            <ViewProductButton
-              route="/collections/ag-products"
-            />
-            <ViewProductButton
-              route="/collections/turf-products"
-            />
+            <ShopCollectionButton route="/collections" />
+            <ShopCollectionButton route="/collections" />
           </div>
         </div>
         <div

@@ -15,7 +15,7 @@
       "
     >
       <Header />
-      <div
+      <main
         class="
           py-4
 
@@ -25,7 +25,7 @@
         "
       >
         <slot />
-      </div>
+      </main>
     </div>
     <Footer />
   </div>

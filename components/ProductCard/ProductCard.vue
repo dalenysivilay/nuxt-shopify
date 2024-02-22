@@ -1,46 +1,26 @@
 <script setup lang="ts">
-import productCardQuery from '~/graphql/queries/productCardQuery'
-import type { ProductCard } from '~/types/components/ProductCard.types'
+import type { ProductCardType } from '~/types/components/ProductCard.types'
 
-interface QueryResult {
-  productByHandle: ProductCard
+interface ProductCardProps {
+  product: ProductCardType
+  isLoading: boolean
 }
 
-const productHandle = ref('4-ever-green')
+const props = defineProps<ProductCardProps>()
 
-const query = productCardQuery
-const variables = { handle: productHandle.value }
-
-const { data, error } = useAsyncQuery<QueryResult>(query, variables)
-
-const product = ref<ProductCard | null>(null)
-const isLoading = ref(true)
-
-watchEffect(() => {
-  if (data.value && data.value.productByHandle) {
-    product.value = data.value.productByHandle
-    isLoading.value = false
-  }
-})
-
-if (error.value) {
-  logError(error.value as Error, 'Failed to fetch product in ProductCard')
-  isLoading.value = false
-}
-
-const isAvailable = computed(() => !!product.value?.availableForSale)
+const isAvailable = computed(() => !!props.product?.availableForSale)
 </script>
 
 <template>
   <div>
-    <div v-if="error">
-      <p>Error loading product data. Please try again later.</p>
+    <div v-if="!props.product">
+      <p>Product data is not available.</p>
     </div>
     <div v-else-if="isLoading">
       <ProductCardLoading />
     </div>
-    <div v-if="product && isAvailable">
-      <BaseProductCard :product="product" />
+    <div v-else-if="isAvailable">
+      <BaseProductCard :product="props.product" />
     </div>
   </div>
 </template>

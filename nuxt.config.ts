@@ -36,6 +36,7 @@ export default defineNuxtConfig({
     '@nuxtjs/apollo',
     '@nuxtjs/tailwindcss',
     'nuxt-icon',
+    'nuxt-swiper',
   ],
   devtools: { enabled: true },
 })

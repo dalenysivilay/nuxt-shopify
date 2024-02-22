@@ -24,7 +24,8 @@
   "dependencies": {
     "@nuxtjs/apollo": "^5.0.0-alpha.11",
     "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
-    "@pinia/nuxt": "^0.5.1"
+    "@pinia/nuxt": "^0.5.1",
+    "nuxt-swiper": "^1.2.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.2",

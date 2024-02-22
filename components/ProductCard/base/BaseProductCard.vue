@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { ProductCard } from '~/types/components/ProductCard.types'
+import type { ProductCardType } from '~/types/components/ProductCard.types'
 
 interface BaseProductCardProps {
-  product: ProductCard
+  product: ProductCardType
 }
 
 defineProps<BaseProductCardProps>()
@@ -14,14 +14,25 @@ defineProps<BaseProductCardProps>()
       <div class="space-y-2">
         <NuxtLink :to="`/products/${product?.handle}`" class="space-y-2">
           <ProductCardImage
+            v-if="product?.featuredImage?.src"
             :src="product?.featuredImage?.src"
             :alt="product?.featuredImage?.altText"
           />
-          <ProductCardTitle :title="product?.title" />
-          <ProductPrice :price-range="product?.priceRange" />
+          <ProductCardTitle
+            v-if="product?.title"
+            :title="product?.title"
+          />
+          <ProductPrice
+            v-if="product?.priceRange"
+            :price-range="product?.priceRange"
+          />
         </NuxtLink>
       </div>
-      <ViewProductButton :route="product?.handle" :is-loading="false" />
+      <ViewProductButton
+        v-if="product?.handle"
+        :route="product?.handle"
+        :is-loading="false"
+      />
     </div>
   </div>
 </template>

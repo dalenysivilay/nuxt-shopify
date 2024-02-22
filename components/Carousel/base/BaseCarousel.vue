@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import type { CarouselItem } from '~/types/components/CarosuelItem.types'
+
 interface BaseCarouselProps {
-  showNumberOfItems?: number
+  showNumberOfItems: number
   title: string
-  carouselItems: Component | undefined
+  carouselItems: CarouselItem[]
 }
 
 defineProps<BaseCarouselProps>()
@@ -11,10 +13,6 @@ defineProps<BaseCarouselProps>()
 <template>
   <div>
     <CarouselTitle :title="title" />
-    <CarouselContainer>
-      <template #carousel-items>
-        <CarouselItems :carousel-items="carouselItems" />
-      </template>
-    </CarouselContainer>
+    <CarouselItems :carousel-items="carouselItems" :show-number-of-items="showNumberOfItems" />
   </div>
 </template>

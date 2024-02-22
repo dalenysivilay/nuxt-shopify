@@ -1,4 +1,4 @@
-export interface ProductCard {
+export interface ProductCardType {
   title: string
   handle: string
   featuredImage: {

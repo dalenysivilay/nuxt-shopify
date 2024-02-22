@@ -7,6 +7,6 @@ definePageMeta({
 <template>
   <div>
     <HeroBanner />
-    <ProductCard />
+    <ProductCarousel title="Featured Turf Products" collection-handle="turf-products" />
   </div>
 </template>

@@ -1,0 +1,24 @@
+{
+  "name": "nuxt-shopify",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "packageManager": "pnpm@8.14.0",
+  "description": "Nuxt 3 + Shopify Headless Storefront Starter ☘️⚡️🛒",
+  "author": "dalenysivilay <hi@daleny.dev>",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.6.2",
+    "eslint": "npm:eslint-ts-patch@8.56.0-0",
+    "eslint-plugin-format": "^0.1.0",
+    "eslint-plugin-perfectionist": "^2.5.0",
+    "eslint-ts-patch": "8.56.0-0",
+    "lint-staged": "^15.2.0",
+    "simple-git-hooks": "^2.9.0",
+    "typescript": "^5.3.3"
+  },
+  "license": "ISC"
+}

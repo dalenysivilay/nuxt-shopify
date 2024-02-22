@@ -33,7 +33,7 @@ importers:
         specifier: ^5.3.3
         version: 5.3.3
 
-  client:
+  packages/client:
     dependencies:
       '@nuxtjs/apollo':
         specifier: ^5.0.0-alpha.11
@@ -7225,7 +7225,7 @@ packages:
       ts-node:
         optional: true
     dependencies:
-      lilconfig: 3.0.0
+      lilconfig: 3.1.1
       postcss: 8.4.35
       yaml: 2.3.4
     dev: true

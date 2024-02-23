@@ -1,8 +1,9 @@
 import type { NuxtPage } from 'nuxt/schema'
-import apollo from './configs/apollo.config'
+import apollo from './src/configs/apollo.config'
 
 export default defineNuxtConfig({
   apollo,
+  srcDir: 'src',
   components: {
     dirs: [
       {

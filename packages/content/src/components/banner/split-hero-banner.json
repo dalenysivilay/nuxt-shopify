@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_banner_split_hero_banners",
+  "info": {
+    "displayName": "Split Hero Banner",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Subtitle": {
+      "type": "string"
+    },
+    "ShopCollectionButton": {
+      "type": "component",
+      "repeatable": true,
+      "component": "button.shop-collection-button"
+    },
+    "BackgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

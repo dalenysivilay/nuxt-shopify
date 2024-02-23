@@ -1,34 +1,11 @@
-import type { NuxtPage } from 'nuxt/schema'
-import apollo from './src/configs/apollo.config'
+import { apollo, components, pagesExtendHook } from './configs/index.config'
 
 export default defineNuxtConfig({
   apollo,
   srcDir: 'src',
-  components: {
-    dirs: [
-      {
-        path: '~/components',
-        pathPrefix: false,
-      },
-      {
-        path: '~/pages',
-        pattern: '*/components/**',
-        pathPrefix: false,
-      },
-    ],
-  },
+  components,
   hooks: {
-    'pages:extend': function (pages) {
-      const pagesToRemove: NuxtPage[] = []
-      pages.forEach((page) => {
-        if (page.path.includes('component'))
-          pagesToRemove.push(page)
-      })
-
-      pagesToRemove.forEach((page: NuxtPage) => {
-        pages.splice(pages.indexOf(page), 1)
-      })
-    },
+    'pages:extend': pagesExtendHook,
   },
   modules: [
     '@vueuse/nuxt',
@@ -36,6 +13,7 @@ export default defineNuxtConfig({
     '@pinia-plugin-persistedstate/nuxt',
     '@nuxtjs/apollo',
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/strapi',
     'nuxt-icon',
     'nuxt-swiper',
   ],

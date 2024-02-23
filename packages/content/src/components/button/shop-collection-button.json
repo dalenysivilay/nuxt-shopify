@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_button_shop_collection_buttons",
+  "info": {
+    "displayName": "Shop Collection Button",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ButtonLabel": {
+      "type": "string"
+    },
+    "PathURL": {
+      "type": "string",
+      "regex": "^\\/(?:[^\\/\\s]+\\/?)*$",
+      "default": "/"
+    }
+  }
+}

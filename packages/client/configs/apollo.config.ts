@@ -1,4 +1,4 @@
-import shopifyClient from '../modules/apollo/shopifyClient'
+import shopifyClient from '../src/modules/apollo/shopifyClient'
 
 export const apollo = {
   clients: {

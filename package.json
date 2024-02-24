@@ -6,12 +6,16 @@
   "packageManager": "pnpm@8.14.0",
   "description": "Nuxt 3 + Shopify Headless Storefront Starter ☘️⚡️🛒",
   "author": "dalenysivilay <hi@daleny.dev>",
+  "license": "ISC",
   "engines": {
     "node": ">=20.0.0",
     "pnpm": ">=8.0.0"
   },
   "scripts": {
-    "dev": "pnpm --filter './packages/*' run dev"
+    "dev": "pnpm --filter './packages/*' run dev",
+    "build": "pnpm --filter './packages/*' run build",
+    "lint": "pnpm --filter './packages/*' run lint",
+    "lint:fix": "pnpm --filter './packages/*' run lint:fix"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.2",
@@ -22,6 +26,5 @@
     "lint-staged": "^15.2.0",
     "simple-git-hooks": "^2.9.0",
     "typescript": "^5.3.3"
-  },
-  "license": "ISC"
+  }
 }

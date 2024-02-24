@@ -1,0 +1,9 @@
+{
+  "name": "@nuxt-shopify/types",
+  "version": "1.0.0",
+  "description": "Strapi types for Nuxt Shopify",
+  "author": "dalenysivilay <hi@daleny.dev>",
+  "license": "ISC",
+  "main": "index.ts",
+  "types": "index.ts"
+}

@@ -33,7 +33,7 @@ importers:
         specifier: ^5.3.3
         version: 5.3.3
 
-  packages/client:
+  packages/nuxt:
     dependencies:
       '@nuxtjs/apollo':
         specifier: ^5.0.0-alpha.11
@@ -130,7 +130,7 @@ importers:
         specifier: ^1.8.27
         version: 1.8.27(typescript@5.3.3)
 
-  packages/content:
+  packages/strapi:
     dependencies:
       '@strapi/plugin-cloud':
         specifier: 4.20.2
@@ -159,6 +159,8 @@ importers:
       styled-components:
         specifier: 5.3.3
         version: 5.3.3(@babel/core@7.23.9)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
+
+  packages/types: {}
 
 packages:
 
@@ -15273,7 +15275,7 @@ packages:
   /slate@0.94.1:
     resolution: {integrity: sha512-GH/yizXr1ceBoZ9P9uebIaHe3dC/g6Plpf9nlUwnvoyf6V1UOYrRwkabtOCd3ZfIGxomY4P7lfgLr7FPH8/BKA==}
     dependencies:
-      immer: 9.0.19
+      immer: 9.0.21
       is-plain-object: 5.0.0
       tiny-warning: 1.0.3
     dev: false
@@ -15355,6 +15357,7 @@ packages:
   /socks@2.7.3:
     resolution: {integrity: sha512-vfuYK48HXCTFD03G/1/zkIls3Ebr2YNa4qU9gHDZdblHLiqhJrJGkY3+0Nx0JpN9qBhJbVObc1CNciT1bIZJxw==}
     engines: {node: '>= 10.0.0', npm: '>= 3.0.0'}
+    deprecated: please use 2.7.4 or 2.8.1 to fix package-lock issue
     dependencies:
       ip-address: 9.0.5
       smart-buffer: 4.2.0

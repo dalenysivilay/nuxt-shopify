@@ -14,6 +14,7 @@ export interface BannerSplitHeroBanner extends Schema.Component {
       true
     >;
     BackgroundImage: Attribute.Media;
+    ProductImage: Attribute.Media;
   };
 }
 
@@ -29,11 +30,31 @@ export interface ButtonShopCollectionButton extends Schema.Component {
   };
 }
 
+export interface HeaderHeader extends Schema.Component {
+  collectionName: 'components_header_headers';
+  info: {
+    displayName: 'Header';
+  };
+  attributes: {
+    BrandLogo: Attribute.Media & Attribute.Required;
+  };
+}
+
+export interface SectionFeaturedProducts extends Schema.Component {
+  collectionName: 'components_section_featured_products';
+  info: {
+    displayName: 'Featured Products';
+  };
+  attributes: {};
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'banner.split-hero-banner': BannerSplitHeroBanner;
       'button.shop-collection-button': ButtonShopCollectionButton;
+      'header.header': HeaderHeader;
+      'section.featured-products': SectionFeaturedProducts;
     }
   }
 }

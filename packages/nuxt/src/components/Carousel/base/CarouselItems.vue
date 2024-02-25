@@ -36,3 +36,4 @@ defineProps<CarouselItemsProps>()
     </div>
   </div>
 </template>
+~~/types/components/CarosuelItem.types

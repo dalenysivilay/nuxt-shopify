@@ -30,3 +30,4 @@ const priceRangeText = `${displayedMinPrice} - ${displayedMaxPrice}`
     </p>
   </div>
 </template>
+~~/types/components/ProductCard.types

@@ -52,3 +52,4 @@ const productCards = computed((): CarouselItem[] => {
     />
   </div>
 </template>
+~~/types/components/ProductCard.types~~/types/components/CarosuelItem.types

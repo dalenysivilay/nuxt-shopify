@@ -6,7 +6,7 @@ Developed by [@dalenysivilay](https://github.com/dalenysivilay) <💪 hi@daleny.
 
 - [Nuxt 3 ☘️](https://nuxt.com/docs/getting-started/introduction) Frontend Framework.
 - [Shopify Storefront API 🛒](https://shopify.dev/docs/api/storefront) E-Commerce Backend.
-- [Strapi](https://strapi.io/) Content Management System.
+- [Sanity]() Content Management System.
 - [TailwindCSS 🎨](https://tailwindcss.com/) Styling.
 - [Apollo 🚀](https://apollo.nuxtjs.org/) GraphQL Client.
 - [Vite ⚡️](https://vitejs.dev/) Build Tool.
@@ -67,9 +67,8 @@ pnpm install
 ## Development Server
 
 Start the Nuxt 3 development server on http://localhost:3000
-and Strapi development server on https://localhost:1377:
+and Sanity development server on https://localhost:3333:
 
 ```bash
 pnpm dev
 ```
-

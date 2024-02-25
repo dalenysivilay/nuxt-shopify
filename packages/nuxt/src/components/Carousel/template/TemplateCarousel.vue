@@ -23,3 +23,4 @@ withDefaults(defineProps<TemplateCarouselProps>(), {
     />
   </div>
 </template>
+~~/types/components/CarosuelItem.types

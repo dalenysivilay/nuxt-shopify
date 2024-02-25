@@ -36,3 +36,4 @@ defineProps<BaseProductCardProps>()
     </div>
   </div>
 </template>
+~~/types/components/ProductCard.types

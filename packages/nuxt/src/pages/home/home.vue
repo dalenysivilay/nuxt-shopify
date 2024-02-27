@@ -6,7 +6,7 @@ definePageMeta({
 
 <template>
   <div>
-    <HeroBanner />
+    <HeroBanner id="dbda4c80-2080-4435-8c5e-fed305ee29f4" />
     <ProductCarousel title="Featured Turf Products" collection-handle="turf-products" />
   </div>
 </template>

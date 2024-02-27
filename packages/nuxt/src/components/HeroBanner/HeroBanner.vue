@@ -1,33 +1,26 @@
 <script setup lang="ts">
-interface HeroBannerProps {
-  title?: string
-  subtitle?: string
-  backgroundImageUrl?: string
-  productImageUrl?: string
-  productImageAlt?: string
-}
+import type { HeroBannerContent, HeroBannerProps } from '~/types/components/components.types'
 
-withDefaults(
-  defineProps<HeroBannerProps>(),
-  {
-    title: 'Default Title',
-    subtitle: 'Default Subtitle',
-    backgroundImageUrl: 'https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/w_1374,c_limit/aed77280-16c6-45c3-9928-e7a063269e0d/men-s-shoes-clothing-accessories.jpg',
-    productImageUrl: 'https://via.placeholder.com/384x384',
-    productImageAlt: 'Placeholder Image',
-  },
-)
+const props = defineProps<HeroBannerProps>()
+const content = ref<HeroBannerContent>()
+const query = `*[_type == "heroBanner" && _id == "${props.id}"][0]`
+
+const data = useSanityContent({ id: props.id, query, defaultContent: props.content })
+
+onMounted(() => {
+  content.value = data.value
+})
 </script>
 
 <template>
-  <div>
+  <div v-if="content">
     <div
       class="
         h-3/6 bg-cover bg-center
 
         md:rounded
       "
-      :style="{ backgroundImage: `url(${backgroundImageUrl})` }"
+      :style="{ backgroundImage: `url(${content.backgroundImage})` }"
     >
       <div
         class="
@@ -39,8 +32,8 @@ withDefaults(
         "
       >
         <div class="flex flex-1 flex-col justify-center">
-          <HeroBannerTitle :title="title" />
-          <HeroBannerSubtitle :subtitle="subtitle" />
+          <HeroBannerTitle :title="content.title" />
+          <HeroBannerSubtitle :subtitle="content.subtitle" />
           <div
             class="
               flex flex-col space-y-4
@@ -60,12 +53,51 @@ withDefaults(
           "
         >
           <div class="size-96 overflow-hidden rounded-md">
-            <img
-              :src="productImageUrl"
-              :alt="productImageAlt"
-              class="size-full object-cover"
-            >
+            <img :src="content.productImage" class="size-full object-cover">
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div v-if="!content" class="animate-pulse">
+    <div
+      class="
+        h-3/6 bg-gray-300
+
+        md:rounded
+      "
+    >
+      <div
+        class="
+          mx-auto flex h-full max-w-7xl px-4 py-12
+
+          sm:py-24
+
+          md:px-6
+        "
+      >
+        <div class="flex flex-1 flex-col justify-center space-y-6">
+          <div class="h-8 w-3/4 rounded bg-gray-200" />
+          <div class="h-6 w-1/2 rounded bg-gray-200" />
+          <div
+            class="
+              flex flex-col space-y-4
+
+              md:flex-row md:space-x-4 md:space-y-0
+            "
+          >
+            <div class="h-10 w-32 rounded bg-gray-200" />
+            <div class="h-10 w-32 rounded bg-gray-200" />
+          </div>
+        </div>
+        <div
+          class="
+            hidden w-1/3 items-center justify-center
+
+            md:block
+          "
+        >
+          <div class="size-48 rounded-md bg-gray-200" />
         </div>
       </div>
     </div>

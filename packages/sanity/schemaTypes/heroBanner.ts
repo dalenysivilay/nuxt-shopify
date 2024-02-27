@@ -14,19 +14,14 @@ export default {
       type: 'string',
     },
     {
-      name: 'backgroundImageUrl',
-      title: 'Background Image URL',
-      type: 'url',
+      name: 'backgroundImage',
+      title: 'Background Image',
+      type: 'image',
     },
     {
       name: 'productImageUrl',
-      title: 'Product Image URL',
-      type: 'url',
-    },
-    {
-      name: 'productImageAlt',
-      title: 'Product Image Alt Text',
-      type: 'string',
+      title: 'Product Image',
+      type: 'image',
     },
   ],
 }

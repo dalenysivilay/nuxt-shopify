@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import ProductCard from '../ProductCard/ProductCard.vue'
 import productCarouselQuery from '~/graphql/queries/productCarouselQuery'
-import type { ProductCardType } from '~/types/components/ProductCard.types'
-import type { CarouselItem } from '~/types/components/CarosuelItem.types'
+import type { CarouselItemType, ProductCardType } from '~/types/components/components.types'
 
 interface QueryResult {
   collectionByHandle: {
@@ -31,8 +30,8 @@ const { data, error } = useAsyncQuery<QueryResult>(productCarouselQuery, {
 
 const isLoading = computed(() => !data.value && !error.value)
 
-const productCards = computed((): CarouselItem[] => {
-  return data.value?.collectionByHandle.products.edges.map(({ node }) => ({
+const productCards = computed((): CarouselItemType[] => {
+  return data.value?.collectionByHandle.products.edges.map(({ node }: { node: ProductCardType }) => ({
     component: ProductCard as Component,
     props: { product: node, isLoading: isLoading.value },
   }))
@@ -52,4 +51,3 @@ const productCards = computed((): CarouselItem[] => {
     />
   </div>
 </template>
-~~/types/components/ProductCard.types~~/types/components/CarosuelItem.types

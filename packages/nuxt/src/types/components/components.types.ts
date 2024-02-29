@@ -1,3 +1,13 @@
+export interface AccordionProps {
+  id?: string
+  content: AccordionContent
+}
+
+export interface AccordionContent {
+  label: string
+  content: string
+}
+
 export interface HeroBannerProps {
   id?: string
   content?: HeroBannerContent

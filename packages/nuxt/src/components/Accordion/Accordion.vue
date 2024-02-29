@@ -1,17 +1,20 @@
 <script setup lang="ts">
-interface TemplateAccordionProps {
-  label: string
-  content: string
-}
+import type { AccordionContent, AccordionProps } from '~/types/components/components.types'
 
-withDefaults(defineProps<TemplateAccordionProps>(), {
-  label: 'Accordion Label',
-  content: 'Accordion Content',
+const props = defineProps<AccordionProps>()
+
+const content = ref<AccordionContent>()
+const query = `*[_type == "accordion" && _id == "${props.id}"][0]`
+
+const data = useSanityContent({ id: props.id, query, defaultContent: props.content })
+
+onMounted(() => {
+  content.value = data.value
 })
 </script>
 
 <template>
-  <div>
-    <BaseAccordion :label="label" :content="content" />
+  <div v-if="content">
+    <BaseAccordion :label="content.label" :content="content.content" />
   </div>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <div
     class="
-      flex w-full flex-row items-center justify-between py-3
+      flex w-full flex-row items-center justify-between py-4
     "
   >
     <NavLogo />

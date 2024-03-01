@@ -1,5 +1,5 @@
 import process from 'node:process'
-import { apollo, components, pagesExtendHook } from './configs/index.config'
+import { apollo, components, pagesExtendHook, sanity } from './configs/index.config'
 
 export default defineNuxtConfig({
   runtimeConfig: {
@@ -8,14 +8,8 @@ export default defineNuxtConfig({
     },
   },
   apollo,
-  sanity: {
-    projectId: 'm0m2ev5u',
-    dataset: 'production',
-  },
+  sanity,
   srcDir: 'src',
-  alias: {
-    '@types/components': './types/components',
-  },
   components,
   hooks: {
     'pages:extend': pagesExtendHook,

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ProductCardType } from '~/types/components/ProductCard.types'
+import type { ProductCardType } from '~/types/components/components.types'
 
 interface ProductCardProps {
   product: ProductCardType

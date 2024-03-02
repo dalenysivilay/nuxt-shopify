@@ -3,7 +3,7 @@
 
 <template>
   <div>
-    <div class="flex flex-row justify-between items-center">
+    <div class="flex flex-row items-center justify-between">
       <div class="flex flex-row text-sm">
         <img
           src=""
@@ -19,7 +19,7 @@
           <div class="text-sm font-normal text-black">
             Quantity: 2
           </div>
-          <div class="font-normal text-sm text-black">
+          <div class="text-sm font-normal text-black">
             $100.00
           </div>
         </div>

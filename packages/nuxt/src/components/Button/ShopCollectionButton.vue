@@ -1,7 +1,7 @@
 <script setup lang="ts">
 interface ShopCollectionButonProps {
-  route: string
   collectionName: string
+  collectionHandle: string
   isLoading: boolean
 }
 
@@ -16,7 +16,7 @@ withDefaults(defineProps<ShopCollectionButonProps>(), {
     <TemplateButton
       :button-label="`Shop ${collectionName}`"
       :is-loading="isLoading"
-      :route="`/collections/${route}`"
+      :route="`/collections/${collectionHandle}`"
     />
   </div>
 </template>

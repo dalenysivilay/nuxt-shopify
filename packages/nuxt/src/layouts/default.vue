@@ -15,15 +15,7 @@
       "
     >
       <Header />
-      <main
-        class="
-          py-4
-
-          md:py-6
-
-          lg:py-8
-        "
-      >
+      <main>
         <slot />
       </main>
     </div>

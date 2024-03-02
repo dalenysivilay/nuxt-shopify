@@ -19,7 +19,7 @@ export default {
       type: 'image',
     },
     {
-      name: 'productImageUrl',
+      name: 'productImage',
       title: 'Product Image',
       type: 'image',
     },

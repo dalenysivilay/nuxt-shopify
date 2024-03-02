@@ -3,22 +3,19 @@ interface HeroBannerSubtitleProps {
   subtitle?: string
 }
 
-withDefaults(
-  defineProps<HeroBannerSubtitleProps>(),
-  {
-    subtitle: 'Default Subtitle',
-  },
-)
+defineProps<HeroBannerSubtitleProps>()
 </script>
 
 <template>
-  <p
-    class="
-      mb-8 text-lg font-medium text-white
+  <div v-if="subtitle">
+    <p
+      class="
+        text-lg font-medium text-white
 
-      md:text-2xl
-    "
-  >
-    {{ subtitle }}
-  </p>
+        md:text-2xl
+      "
+    >
+      {{ subtitle }}
+    </p>
+  </div>
 </template>

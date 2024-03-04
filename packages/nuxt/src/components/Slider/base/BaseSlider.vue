@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import SliderHeader from './SliderHeader.vue'
+
 type Side = 'left' | 'right'
 
 interface BaseSliderProps {
@@ -26,9 +28,11 @@ defineProps<BaseSliderProps>()
       '-translate-x-full': !isOpen && side === 'left',
     }"
   >
-    <div class="flex h-full flex-col justify-between px-4 py-2">
-      <SliderHeader :slider-header="headerComponent" :toggle-slider="toggleSlider" />
-      <SliderBody :slider-body="bodyComponent" />
+    <div class="flex h-full flex-col justify-between px-6 py-4">
+      <div>
+        <SliderHeader :slider-header="headerComponent" :toggle-slider="toggleSlider" />
+        <SliderBody :slider-body="bodyComponent" />
+      </div>
       <SliderFooter :slider-footer="footerComponent" />
     </div>
   </div>

@@ -8,7 +8,7 @@ defineProps<SliderFooterProps>()
 
 <template>
   <div>
-    <div class="space-y-2">
+    <div class="space-y-4">
       <Divider v-if="sliderFooter" />
       <component :is="sliderFooter" />
     </div>

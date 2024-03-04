@@ -10,7 +10,7 @@
           alt=""
           width="100"
           height="100"
-          class="mr-4 block h-auto w-20 self-start object-contain"
+          class="mr-4 block size-20 self-start object-contain"
         >
         <div>
           <div class="text-base font-bold text-black">

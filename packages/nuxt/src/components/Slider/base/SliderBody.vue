@@ -8,7 +8,7 @@ defineProps<SliderBodyProps>()
 
 <template>
   <div>
-    <div class="py-2">
+    <div class="py-4">
       <component :is="sliderBody" />
     </div>
   </div>

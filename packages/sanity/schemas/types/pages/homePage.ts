@@ -25,6 +25,17 @@ export default {
           type: 'reference',
           to: [{ type: 'orderInfoCards' }],
         },
+        {
+          title: 'Featured Collections',
+          name: 'featuredCollections',
+          type: 'array',
+          of: [
+            {
+              type: 'reference',
+              to: [{ type: 'featuredCollection' }],
+            },
+          ],
+        },
       ],
     },
   ],

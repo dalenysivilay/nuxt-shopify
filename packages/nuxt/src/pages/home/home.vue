@@ -11,6 +11,7 @@ interface HomePageQuery {
     orderInfoCards: {
       _ref: string
     }
+    featuredCollections: Array<{ _ref: string }>
   }
 }
 
@@ -19,6 +20,7 @@ const { data } = await useSanityQuery<HomePageQuery>(query)
 
 const heroBannerRef = data?.value?.pageContent?.heroBanner?._ref
 const orderInfoRef = data?.value?.pageContent?.orderInfoCards?._ref
+const featuredCollectionsRef = data?.value?.pageContent?.featuredCollections
 </script>
 
 <template>
@@ -26,7 +28,7 @@ const orderInfoRef = data?.value?.pageContent?.orderInfoCards?._ref
     <PageContainer>
       <HeroBanner :id="heroBannerRef" />
       <OrderInfo :id="orderInfoRef" />
-      <ProductCarousel title="Featured Turf Products" collection-handle="turf-products" />
+      <ProductCarousel v-for="(ref, index) in featuredCollectionsRef" :id="ref._ref" :key="index" />
     </PageContainer>
   </div>
 </template>

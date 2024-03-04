@@ -13,19 +13,28 @@ interface QueryResult {
 }
 
 interface ProductCarouselProps {
-  title: string
-  showNumberOfItems?: number
-  collectionHandle: string
+  id?: string
 }
 
-const props = withDefaults(defineProps<ProductCarouselProps>(), {
-  showNumberOfItems: 4,
-  collectionHandle: 'turf-products',
-})
+interface ProductCarouselFields {
+  title: string
+  collectionHandle: string
+  showNumberOfItems: number
+}
+
+const props = defineProps<ProductCarouselProps>()
+
+const query = `*[_type == "featuredCollection" && _id == "${props.id}"][0]`
+
+const sanityData = await useSanityQuery<ProductCarouselFields>(query)
+
+const collectionTitle = sanityData?.data?.value?.title
+const collectionHandle = sanityData?.data?.value?.collectionHandle
+const showNumberOfItems = sanityData?.data?.value?.showNumberOfItems
 
 const { data, error } = useAsyncQuery<QueryResult>(productCarouselQuery, {
-  handle: props.collectionHandle,
-  first: props.showNumberOfItems,
+  handle: collectionHandle,
+  first: showNumberOfItems,
 })
 
 const isLoading = computed(() => !data.value && !error.value)
@@ -45,9 +54,9 @@ const productCards = computed((): CarouselItemType[] => {
     </div>
     <TemplateCarousel
       v-else
-      :title="props.title"
+      :title="collectionTitle"
       :carousel-items="productCards"
-      :show-number-of-items="props.showNumberOfItems"
+      :show-number-of-items="showNumberOfItems"
     />
   </div>
 </template>

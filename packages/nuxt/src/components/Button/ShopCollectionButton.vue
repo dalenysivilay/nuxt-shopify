@@ -2,11 +2,9 @@
 interface ShopCollectionButonProps {
   collectionName: string
   collectionHandle: string
-  isLoading: boolean
 }
 
 withDefaults(defineProps<ShopCollectionButonProps>(), {
-  isLoading: false,
   collectionName: 'Collection',
 })
 </script>
@@ -15,7 +13,6 @@ withDefaults(defineProps<ShopCollectionButonProps>(), {
   <div>
     <TemplateButton
       :button-label="`Shop ${collectionName}`"
-      :is-loading="isLoading"
       :route="`/collections/${collectionHandle}`"
     />
   </div>

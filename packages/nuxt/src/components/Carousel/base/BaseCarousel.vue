@@ -16,4 +16,3 @@ defineProps<BaseCarouselProps>()
     <CarouselItems :carousel-items="carouselItems" :show-number-of-items="showNumberOfItems" />
   </div>
 </template>
-~~/types/components/CarosuelItem.types

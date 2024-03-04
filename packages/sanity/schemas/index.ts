@@ -1,7 +1,7 @@
-import components from './types/components'
-import page from './types/page'
+import content from './types/content'
+import pages from './types/pages'
 
 export const schemaTypes = [
-  ... components,
-  page,
+  ...content,
+  ...pages,
 ]

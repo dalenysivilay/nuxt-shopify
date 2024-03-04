@@ -1,5 +1,45 @@
 <script setup lang="ts">
+interface OrderInfoCardProps {
+  id?: string
+}
 
+interface OrderInfoCardFields {
+  icon: string
+  title: string
+  description: string
+}
+
+interface OrderInfoCardsType {
+  leftCard: OrderInfoCardFields
+  centerCard: OrderInfoCardFields
+  rightCard: OrderInfoCardFields
+}
+
+const props = defineProps<OrderInfoCardProps>()
+
+const query = `*[_type == "orderInfoCards" && _id == "${props.id}"][0] {
+  "leftCard": {
+    "icon": leftCard.icon.asset->url,
+    "title": leftCard.title,
+    "description": leftCard.description,
+  },
+  "centerCard": {
+    "icon": centerCard.icon.asset->url,
+    "title": centerCard.title,
+    "description": centerCard.description,
+  },
+  "rightCard": {
+    "icon": rightCard.icon.asset->url,
+    "title": rightCard.title,
+    "description": rightCard.description,
+  },
+}`
+
+const { data } = await useSanityQuery<OrderInfoCardsType>(query)
+
+const leftCard = data?.value?.leftCard
+const centerCard = data?.value?.centerCard
+const rightCard = data?.value?.rightCard
 </script>
 
 <template>
@@ -19,19 +59,22 @@
         "
       >
         <OrderInfoCard
-          title="Online Ordering"
-          description="Agronomy Assistance is just a few clicks away. Use our simple checkout system for all your needs."
-          icon="ic:outline-shopping-cart"
+          v-if="leftCard"
+          :title="leftCard?.title"
+          :description="leftCard?.description"
+          :icon="leftCard?.icon"
         />
         <OrderInfoCard
-          title="Order Status"
-          description="When you order our products you'll be notified of your shipment status via email."
-          icon="ic:outline-mail"
+          v-if="centerCard"
+          :title="centerCard?.title"
+          :description="centerCard?.description"
+          :icon="centerCard?.icon"
         />
         <OrderInfoCard
-          title="Reliable Delivery"
-          description="Your orders are made and shipped with care. Each order generally arrives between 7 to 10 business days. If you would like to organize you own shipping simply contact our office and we will get it done your way."
-          icon="ic:outline-local-shipping"
+          v-if="rightCard"
+          :title="rightCard?.title"
+          :description="rightCard?.description"
+          :icon="rightCard?.icon"
         />
       </div>
     </div>

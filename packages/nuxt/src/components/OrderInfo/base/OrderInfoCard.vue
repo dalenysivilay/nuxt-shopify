@@ -17,11 +17,10 @@ defineProps<OrderInfoCardProps>()
     "
   >
     <div class="flex items-center">
-      <Icon
-        :name="icon"
-        size="1.5rem"
-        class="mr-2 text-white"
-      />
+      <img
+        :src="icon"
+        class="mr-2 size-6 text-white"
+      >
       <h2 class="text-xl font-bold text-white">
         {{ title }}
       </h2>

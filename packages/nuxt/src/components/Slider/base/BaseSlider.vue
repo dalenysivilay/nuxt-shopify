@@ -18,8 +18,9 @@ defineProps<BaseSliderProps>()
 <template>
   <div
     class="
-      fixed top-0 z-50 h-full md:w-1/3 w-11/12 bg-white shadow-lg
-      transition-transform
+      fixed top-0 z-50 h-full w-11/12 bg-white shadow-lg transition-transform
+
+      md:w-1/3
     "
     :class="{
       'left-0': side === 'left',

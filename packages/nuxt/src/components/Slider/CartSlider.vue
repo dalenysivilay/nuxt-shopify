@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import CartSliderHeader from './CartSliderHeader.vue'
-import CartBody from '~/components/Cart/base/CartBody.vue'
-import CartFooter from '~/components/Cart/base/CartFooter.vue'
+import CartSliderHeader from './base/CartSlider/CartSliderHeader.vue'
+import CartSliderBody from './base/CartSlider/CartSliderBody.vue'
+import CartSliderFooter from './base/CartSlider/CartSliderFooter.vue'
 
 const navigationStore = useNavigationStore()
 const isCartSliderOpen = computed(() => navigationStore.isCartSliderOpen)
@@ -14,7 +14,7 @@ const toggleCartSlider = () => navigationStore.toggleCartSlider()
     :toggle-slider="toggleCartSlider"
     side="right"
     :header-component="CartSliderHeader"
-    :body-component="CartBody"
-    :footer-component="CartFooter"
+    :body-component="CartSliderBody"
+    :footer-component="CartSliderFooter"
   />
 </template>

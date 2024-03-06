@@ -15,7 +15,8 @@
     "dev": "pnpm --filter './packages/*' run dev",
     "build": "pnpm --filter './packages/*' run build",
     "lint": "pnpm --filter './packages/*' run lint",
-    "lint:fix": "pnpm --filter './packages/*' run lint:fix"
+    "lint:fix": "pnpm --filter './packages/*' run lint:fix",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.2",
@@ -23,8 +24,7 @@
     "eslint-plugin-format": "^0.1.0",
     "eslint-plugin-perfectionist": "^2.5.0",
     "eslint-ts-patch": "8.56.0-0",
-    "lint-staged": "^15.2.0",
-    "simple-git-hooks": "^2.9.0",
+    "husky": "^9.0.11",
     "typescript": "^5.3.3"
   }
 }

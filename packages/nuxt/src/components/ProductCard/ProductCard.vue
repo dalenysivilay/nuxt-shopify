@@ -24,4 +24,3 @@ const isAvailable = computed(() => !!props.product?.availableForSale)
     </div>
   </div>
 </template>
-~~/types/components/ProductCard.types

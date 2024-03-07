@@ -1,16 +1,7 @@
 <script setup lang="ts">
-import ProductCard from '../ProductCard/ProductCard.vue'
-import productCarouselQuery from '~/graphql/queries/productCarouselQuery'
+import ProductCard from '~/components/ProductCard/ProductCard.vue'
+import getProductCarousel from '~/graphql/queries/productCarouselQuery'
 import type { CarouselItemType, ProductCardType } from '~/types/components/components.types'
-
-interface QueryResult {
-  collectionByHandle: {
-    handle: string
-    products: {
-      edges: Array<{ node: ProductCardType }>
-    }
-  }
-}
 
 interface ProductCarouselProps {
   id?: string
@@ -32,12 +23,9 @@ const collectionTitle = sanityData?.data?.value?.title
 const collectionHandle = sanityData?.data?.value?.collectionHandle
 const showNumberOfItems = sanityData?.data?.value?.showNumberOfItems
 
-const { data, error } = useAsyncQuery<QueryResult>(productCarouselQuery, {
-  handle: collectionHandle,
-  first: showNumberOfItems,
-})
+const data = await getProductCarousel(collectionHandle, showNumberOfItems)
 
-const isLoading = computed(() => !data.value && !error.value)
+const isLoading = computed(() => !data.value)
 
 const productCards = computed((): CarouselItemType[] => {
   return data.value?.collectionByHandle.products.edges.map(({ node }: { node: ProductCardType }) => ({
@@ -49,14 +37,10 @@ const productCards = computed((): CarouselItemType[] => {
 
 <template>
   <div>
-    <div v-if="error">
-      <p>Error loading product data. Please try again later.</p>
-    </div>
     <TemplateCarousel
-      v-else
       :title="collectionTitle"
       :carousel-items="productCards"
-      :show-number-of-items="showNumberOfItems"
+      :show-number-of-products="showNumberOfItems"
     />
   </div>
 </template>

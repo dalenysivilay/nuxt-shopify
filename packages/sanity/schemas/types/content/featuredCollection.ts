@@ -14,8 +14,8 @@ export default {
       type: 'string',
     },
     {
-      name: 'showNumberOfProducts',
-      title: 'Show Number of Products',
+      name: 'showNumberOfItems',
+      title: 'Show Number of Items',
       type: 'number',
     },
   ],

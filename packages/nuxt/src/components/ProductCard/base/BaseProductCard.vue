@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ProductCardType } from '~/types/components/ProductCard.types'
+import type { ProductCardType } from '~/types/components/components.types'
 
 interface BaseProductCardProps {
   product: ProductCardType
@@ -31,9 +31,7 @@ defineProps<BaseProductCardProps>()
       <ViewProductButton
         v-if="product?.handle"
         :route="product?.handle"
-        :is-loading="false"
       />
     </div>
   </div>
 </template>
-~~/types/components/ProductCard.types

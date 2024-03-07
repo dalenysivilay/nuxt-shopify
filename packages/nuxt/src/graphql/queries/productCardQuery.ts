@@ -1,3 +1,5 @@
+import type ProductCardQueryType from '~/types/graphql/queries/productCardQuery.type'
+
 export const productCardQuery = gql`
   query product($handle: String!) {
     productByHandle(handle: $handle) {
@@ -21,5 +23,20 @@ export const productCardQuery = gql`
     }
   }
 `
+export async function getProductCard(productHandle?: string) {
+  try {
+    const { data, error } = await useAsyncQuery<ProductCardQueryType>(productCardQuery, {
+      handle: productHandle,
+    })
 
-export default productCardQuery
+    if (error)
+      logError(error as Error, 'GraphQL Error: Failed to fetch product card data')
+
+    return data
+  }
+  catch (error) {
+    logError(error as Error, 'Network Error: Failed to fetch product card data')
+  }
+}
+
+export default getProductCard

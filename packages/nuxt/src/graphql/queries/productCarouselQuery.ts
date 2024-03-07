@@ -1,8 +1,10 @@
-export const productCarouselCarouselQuery = gql`
-  query collection ($handle: String!) {
+import type ProductCarouselQueryType from '~/types/graphql/queries/productCarouselQuery.type'
+
+const productCarouselQuery = gql`
+  query collection ($handle: String! $first: Int!) {
     collectionByHandle(handle: $handle) {
       handle
-      products(sortKey: RELEVANCE, first: 4) {
+      products(sortKey: RELEVANCE, first: $first) {
         edges {
           node {
             title
@@ -28,4 +30,21 @@ export const productCarouselCarouselQuery = gql`
   }
 }
 `
-export default productCarouselCarouselQuery
+export async function getProductCarousel(collectionHandle?: string, showNumberOfItems?: number) {
+  try {
+    const { data, error } = await useAsyncQuery<ProductCarouselQueryType>(productCarouselQuery, {
+      handle: collectionHandle,
+      first: showNumberOfItems,
+    })
+
+    if (error.value)
+      logError(error as Error, 'GraphQL Error: Failed to fetch product carousel data')
+
+    return data
+  }
+  catch (error) {
+    logError(error as Error, 'Network Error: Failed to fetch product carousel data')
+  }
+}
+
+export default getProductCarousel

@@ -1,12 +1,9 @@
 <script setup lang="ts">
 interface ViewProductButonProps {
   route: string
-  isLoading: boolean
 }
 
-withDefaults(defineProps<ViewProductButonProps>(), {
-  isLoading: false,
-})
+defineProps<ViewProductButonProps>()
 </script>
 
 <template>
@@ -14,7 +11,6 @@ withDefaults(defineProps<ViewProductButonProps>(), {
     <TemplateButton
       button-label="View Product"
       :full-width="true"
-      :is-loading="isLoading"
       :route="`/products/${route}`"
     />
   </div>

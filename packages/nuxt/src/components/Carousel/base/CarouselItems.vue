@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { CarouselItem } from '~/types/components/CarosuelItem.types'
+import type { CarouselItemType } from '~/types/components/components.types'
 
 interface CarouselItemsProps {
-  carouselItems: CarouselItem[]
+  carouselItems: CarouselItemType[]
   showNumberOfItems?: number
 }
 
@@ -36,4 +36,3 @@ defineProps<CarouselItemsProps>()
     </div>
   </div>
 </template>
-~~/types/components/CarosuelItem.types
